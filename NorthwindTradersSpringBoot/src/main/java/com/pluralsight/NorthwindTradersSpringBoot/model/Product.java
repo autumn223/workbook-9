@@ -1,59 +1,53 @@
 package com.pluralsight.NorthwindTradersSpringBoot.model;
 
 public class Product {
-    private int productId;
-    private String name;
-    private String category;
-    private double price;
 
-    public Product() {}
+    private int productID;
+    private String productName;
+    private double unitPrice;
 
-    public Product(int productId, String name, String category, double price) {
-        this.productId = productId;
-        this.name = name;
-        this.category = category;
-        this.price = price;
+    public Product() {
     }
 
-    public int getProductId() {
-        return productId;
+
+    public Product(int productID, String productName, double unitPrice) {
+        this.productID = productID;
+        this.productName = productName;
+        this.unitPrice = unitPrice;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public int getProductID() {
+        return productID;
     }
 
-    public String getName() {
-        return name;
+    public void setProductID(int productID) {
+        this.productID = productID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProductName() {
+        return productName;
     }
 
-    public String getCategory() {
-        return category;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public double getUnitPrice() {
+        return unitPrice;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "productId=" + productId +
-                ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
+                "productID=" + productID +
+                ", productName='" + productName + '\'' +
+                ", unitPrice=" + unitPrice +
                 '}';
     }
 }
+
+

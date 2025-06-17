@@ -35,6 +35,7 @@ public class ProductApp implements CommandLineRunner {
                         System.out.println(p);
                     }
                     break;
+
                 case "2":
                     System.out.print("Enter product name: ");
                     String name = scanner.nextLine();
@@ -43,24 +44,33 @@ public class ProductApp implements CommandLineRunner {
                     String category = scanner.nextLine();
 
                     System.out.print("Enter product price: ");
-                    double price = Double.parseDouble(scanner.nextLine());
+                    double price;
+                    try {
+                        price = Double.parseDouble(scanner.nextLine());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid price. Please enter a number.");
+                        break;
+                    }
 
                     Product product = new Product();
-                    product.setName(name);
-                    product.setCategory(category);
-                    product.setPrice(price);
+                    product.setProductName(name);
+                    product.setUnitPrice(price);
 
                     productDao.add(product);
-                    System.out.println("Product added.");
+                    System.out.println("Product added successfully.");
                     break;
+
                 case "3":
                     System.out.println("Goodbye!");
-                    System.exit(0);
+                    return;
+
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println("Invalid option. Please try again.");
+                    break;
             }
         }
     }
 }
+
 
 
